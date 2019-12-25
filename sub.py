@@ -57,7 +57,10 @@ class Sub:
             self.dwr.goto(-all_dist + dist * k, -300)
             self.dwr.down()
 
-            self.dwr.color(
-                self.colors[int(self.t * (st - abs(k - st)) / 4)])
+            try:
+                self.dwr.color(
+                    self.colors[int(self.t * (st - abs(k - st)) / 4)])
+            except:
+                self.dwr.color(self.colors[-1])
 
             self.dwr.fd(self.t * (st - abs(k - st)))
